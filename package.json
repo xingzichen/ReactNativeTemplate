@@ -3,11 +3,18 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "android": "react-native run-android",
-    "ios": "react-native run-ios",
-    "start": "react-native start",
     "test": "jest",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "env:dev": "node scripts/set-environment.js dev",
+    "env:prod": "node scripts/set-environment.js prod",
+    "android": "yarn env:dev && react-native run-android",
+    "ios": "yarn env:dev && react-native run-ios",
+    "start": "react-native start",
+    "bundle:ios-dev": "yarn env:dev && react-native bundle --platform ios --dev true --entry-file index.ts --bundle-output ./ios/main.jsbundle --assets-dest ./ios",
+    "bundle:android-dev": "yarn env:dev && react-native bundle --platform android --dev true --entry-file index.ts --bundle-output android/app/src/main/assets/index.android.bundle",
+    "bundle:ios-release": "yarn env:prod && react-native bundle --platform ios --dev false --entry-file index.ts --bundle-output ./ios/main.jsbundle --assets-dest ./ios",
+    "bundle:android-release": "yarn env:prod && react-native bundle --platform android --dev false --entry-file index.ts --bundle-output android/app/src/main/assets/index.android.bundle",
+    "release:android-release": "yarn bundle:android-release; cd android; ./gradlew assembleRelease; cd .."
   },
   "dependencies": {
     "react": "16.13.1",
@@ -15,6 +22,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
+    "@babel/plugin-proposal-decorators": "^7.12.12",
     "@babel/runtime": "^7.12.5",
     "@react-native-community/eslint-config": "^1.1.0",
     "@types/jest": "^26.0.20",

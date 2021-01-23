@@ -1,0 +1,5 @@
+{
+  "API_PREFIX": "http://127.0.0.1:9000",
+  "WEB_DOMAIN": "http://127.0.0.1:9000",
+  "UNI_LINK": "http://127.0.0.1:9000/app"
+}
