@@ -1,5 +1,5 @@
 {
-  "name": "react-native-template",
+  "name": "react-nativet-template",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -10,7 +10,7 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "react": "17.0.1",
+    "react": "16.13.1",
     "react-native": "0.63.4"
   },
   "devDependencies": {
@@ -18,9 +18,9 @@
     "@babel/runtime": "^7.12.5",
     "@react-native-community/eslint-config": "^1.1.0",
     "@types/jest": "^26.0.20",
-    "@types/react": "^17.0.0",
+    "@types/react": "16.9.56",
     "@types/react-native": "^0.63.46",
-    "@types/react-test-renderer": "^17.0.0",
+    "@types/react-test-renderer": "^16.9.3",
     "babel-jest": "^25.1.0",
     "eslint": "^6.5.1",
     "jest": "^25.1.0",
